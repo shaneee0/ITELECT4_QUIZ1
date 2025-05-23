@@ -43,10 +43,10 @@
                         </thead>
 
                         <tbody  >
-                            @foreach ($employees as $item)
+                            @foreach ($employees as $items)
                             <tr>
                                 
-                                <td class="">{{$items->id}}</td>
+                                <td>{{$items->id}}</td>
                                 <td>{{$items->fname}}</td>
                                 <td>{{$items->lname}}</td>
                                 <td>{{$items->midname}}</td>
