@@ -43,17 +43,25 @@
                         </thead>
 
                         <tbody  >
-                            @foreach ($employees as )
+                            @foreach ($employees as $items)
                             <tr>
                                 
-                                {{-- <td class="">{{$items->}}</td>
-                                <td>{{$items}}</td>
-                                <td>{{$items}}</td>
-                                <td>{{$items}}</td>
-                                <td>{{$items}}</td>
-                                <td>{{$items}}</td>
-                                <td>{{$items}}</td> --}}
-                                
+                                <td class="">{{$items->zip}}</td>
+                                <td>{{$items->id}}</td>
+                                <td>{{$items->fname}}</td>
+                                <td>{{$items->lname}}</td>
+                                <td>{{$items->midname}}</td>
+                                <td>{{$items->age}}</td>
+                                <td>{{$items->address}}</td>
+                                <td>
+                                    <span class="badge bg-success">
+                                        <a href="{{ route('employee.edit',$item->id)}}" class="btn btn-success">Edit</a>
+                                    </span>
+                                    <span class="badge bg-danger">
+                                        <a href="{{ route('employee.delete',$item->id)}}" class="btn btn-danger">Delete</a>
+                                    </span>
+                                </td>
+
                                 
                             </tr>
                             @endforeach

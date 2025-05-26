@@ -23,6 +23,9 @@ Route::middleware('auth')->group(function () {
    // Route::('employee/create', [App\Http\Controllers\employeecontroller::class, 'create']);
     //Route::('employee', [App\Http\Controllers\employeecontroller::class, 'store']);
 
+    Route::get('employee/{id}/edit', [App\Http\Controllers\employeecontroller::class, 'edit'])->name('employee.edit');
+    Route::put('employee/{id}/edit', [App\Http\Controllers\employeecontroller::class, 'update'])->name('employee.edit');
+    Route::get('employee/{id}/delete', [App\Http\Controllers\employeecontroller::class, 'delete'])->name('employee.delete');
 
     
 
