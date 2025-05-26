@@ -29,11 +29,14 @@ class EmployeesController extends Controller
         'age' => 'required|',
         'address' => 'required|max:255|',
         'zip' => 'required|',
+
+
         
     ]);
 
-    $employees::create($request->all());
+    employee::create($request->all());
     return view ('employee.create');
+    
     }
 
     public function edit( int $id)
@@ -54,14 +57,14 @@ class EmployeesController extends Controller
                 
             ]);
         
-            $employees::findOrFail($id)->update($request->all());
+            employee::findOrFail($id)->update($request->all());
             return redirect ()->back()->with('status','Employee Updated Successfully!');
             }
     }
 
     public function delete(int $id){
         $employees = employee::findOrFail($id);
-        $employees->deete();
+        $employees->delete();
         return redirect ()->back()->with('status','Employee Deleted');
     }
 }

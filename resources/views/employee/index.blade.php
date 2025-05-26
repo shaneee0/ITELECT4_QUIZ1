@@ -57,7 +57,7 @@
                                         <a href="{{ route('employee.edit',$item->id)}}" class="btn btn-success">Edit</a>
                                     </span>
                                     <span class="badge bg-danger">
-                                        <a href="{{ route('employee.delete',$item->id)}}" class="btn btn-danger">Delete</a>
+                                        <a href="{{ route('employee.destroy',$item->id)}}" class="btn btn-danger">Delete</a>
                                     </span>
                                 </td>
 
