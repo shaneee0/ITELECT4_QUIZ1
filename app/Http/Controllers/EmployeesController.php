@@ -32,7 +32,7 @@ class EmployeesController extends Controller
         
     ]);
 
-    $employees::create($request->all());
+    employee::create($request->all());
     return view ('employee.create');
     }
 
