@@ -29,20 +29,17 @@ class EmployeesController extends Controller
         'age' => 'required|',
         'address' => 'required|max:255|',
         'zip' => 'required|',
-
-
         
     ]);
 
-    employee::create($request->all());
+    $employees::create($request->all());
     return view ('employee.create');
-    
     }
 
     public function edit( int $id)
     {
-        $employees = edit::find($id);
-        return view ('employee.edit');
+        $employees = employee::findorFail($id);
+        return view ('employee.edit', compact('employees'));
     }
 
     public function update(Request $request, int $id) {
